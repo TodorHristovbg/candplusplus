@@ -2,17 +2,18 @@
 #include <string.h>
 #include <stdbool.h>
 
-void printBoard(int board[9]);
-void playerturn(int *turnpotr, int *board,int *movestotal);
-void gamestate(int *board,int lastmove,int *movestotal);
+void printBoard(unsigned char board[9]);
+void playerturn(unsigned char *turnpotr, unsigned char *board,unsigned char *movestotal);
+void gamestate(unsigned char *board,unsigned char lastmove,unsigned char *movestotal);
 
 int main (){
-     int i=0;
-    int board[9] = {0};
+    unsigned char i=0;
+    unsigned char board[9];
+    memset(board,0,sizeof(board));
 
    
-    int turnval = 1;
-    int *turnpotr = &turnval;
+    unsigned char turnval = 1;
+    unsigned char *turnpotr = &turnval;
      
     printBoard(board);
 
@@ -27,15 +28,19 @@ int main (){
     return 0;
 }
 
-void playerturn(int *turnpotr, int *board, int *movestotal){
-    int index=-1;
-    int temp=-1;
+
+
+
+void playerturn(unsigned char *turnpotr, unsigned char *board, unsigned char *movestotal){
+    unsigned char index=-1;
+    unsigned char temp=-1;
     
 
     while(index > 8 || index < 0){
     printf("Enter index of your move  ");
     scanf("%d",&temp);
     if(board[temp-1]==0){
+        printf("symb on index %c",board[temp-1]);
         index=temp-1;
     }
    }
@@ -53,7 +58,7 @@ void playerturn(int *turnpotr, int *board, int *movestotal){
 }
 
 
-void gamestate(int *board,int lastmove, int *movestotal){
+void gamestate(unsigned char *board,unsigned char lastmove, unsigned char *movestotal){
 
      
 
@@ -84,11 +89,11 @@ void gamestate(int *board,int lastmove, int *movestotal){
 
 
 
-void printBoard(int board[9]){
+void printBoard(unsigned char board[9]){
 
-    char line[50] = "";
+    char line[22] = "";
     
-     int i = 1;
+     unsigned char i = 1;
 
        for(i=1; i<=9 ;i++){
             switch (board[i-1])
