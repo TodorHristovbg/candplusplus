@@ -18,5 +18,5 @@ void Spell::effect(){
     std::cout<<"Standard efffect called"<<std::endl;
 }
 Spell::~Spell(){
-    std::cout<<"DEFAULT DESTRUCTOR CALLED"<<std::endl;
+
 }

@@ -113,10 +113,10 @@ bool Player::spellzonefull(){
          int i=0;
         while (i<6) 
         {
-            std::cout<<hasbackrowat(i)<<"do we have backrow?"<<std::endl;
+           
             if(hasbackrowat(i)==false){
 
-                std::cout<<"SPELLZONEFULL RETURNING FALSE"<<std::endl;
+               
                 return false;
             }
             i++;

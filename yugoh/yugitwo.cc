@@ -8,25 +8,6 @@
 #include "Player.h"
 #include "gameplay.h"
 
-class Player;
-class EquipSpell;
-class Board;
-
-
-
-
-
-
-
-void randomizeseed();
-void generateMonster(Player *owner);
-void generateEquip(Player *owner);
-void drawcard(Player* player);
-void fillhand(Player* player);
-void whogoesfirst(Player* player1, Player* player2);
-bool playacard();
-void MainPhase1(Player* player);
-void getyourgameon(Player* player1, Player* player2);
 
 int main(){
 
