@@ -11,8 +11,8 @@ class Player final{
  std::string Name;
     int lifepoints=0;
     Card *hand[6];
-    Board* ownboard;
-    Board* enemyboard;
+     Board*  ownboard;
+     Board*  enemyboard;
     
     int normalsummon=0;
 
@@ -52,6 +52,7 @@ void playSpell(int indexinhand);
 void destroymonster(int index);
 void destroybackrow(int index);
 void normalizehand(int index);
+~Player();
 };
 
 #endif

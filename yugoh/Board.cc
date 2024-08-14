@@ -82,3 +82,10 @@ void Board::triggerspell(int index){
 
 
 }
+Board::~Board(){
+    std::cout<<"BOARD DESTRUCTOR CALLED"<<std::endl;
+    for(int i=0;i<6;i++){
+        delete monsterzone[i];
+        delete spellzone[i];
+    }
+}

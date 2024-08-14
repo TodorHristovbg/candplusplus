@@ -42,7 +42,7 @@ int Player::getlifepoints(){
         return lifepoints;
     }
 void Player::setownboard(Board* own){
-        ownboard=own;
+         ownboard=own;
     }
 void Player::setenemyboard(Board* enemy){
         enemyboard=enemy;
@@ -391,6 +391,8 @@ void Player::destroybackrow(int index){
 
 
 void Player::normalizehand(int index){
+
+
         int i=index;
         while (i<5)
         {
@@ -425,4 +427,13 @@ void Player::normalizehand(int index){
         }
 
 
+}
+
+Player::~Player(){
+    for(int i =0;i<6;i++){
+        delete hand[i];
+    }
+   // ownboard->~Board();
+    delete ownboard;
+    delete enemyboard;
 }

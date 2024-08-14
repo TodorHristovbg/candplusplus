@@ -271,4 +271,13 @@ while (player1->getlifepoints()>0 && player2->getlifepoints()>0)
 
 }
 
+if(player1->getlifepoints()<=0){
+    std::cout<<player2->getname()<<" WINS"<<std::endl;
+    delete player1;
+}
+if(player2->getlifepoints()<=0){
+    std::cout<<player1->getname()<<" WINS"<<std::endl;
+    delete player2;
+}
+
 }
