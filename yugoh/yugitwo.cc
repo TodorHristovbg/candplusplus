@@ -7,31 +7,25 @@
 #include "Board.h"
 #include "Player.h"
 #include "gameplay.h"
+#include "Effects.h"
 
 
 int main(){
 
-    std::string name;
+    
+   std::string name;
 
     std::cout<<"Name of first player"<<std::endl;
     std::cin>>name; 
     Player player1(name);
-  
 
+                                                      //ERROR SOMEWHERE IN DISPLAYBOARD V BOARD.CC NZ
 
     std::cout<<"Name of second player"<<std::endl;
     std::cin>>name; 
     Player player2(name);
 
     whogoesfirst(&player1,&player2);
-    
-
-
-  //  Monster a("Blue eyes white dragon",3000,2000,4,&player1);
- // player1.Draw(&a);
-
-
-
 
     return 0;
 }

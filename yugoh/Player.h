@@ -11,8 +11,8 @@ class Player final{
  std::string Name;
     int lifepoints=0;
     Card *hand[6];
-     Board*  ownboard;
-     Board*  enemyboard;
+    Board*  ownboard;
+    Board*  enemyboard;
     
     int normalsummon=0;
 
@@ -27,7 +27,9 @@ void addlifepoints(int change);
 void removelifepoints(int change);
 int getlifepoints();
 void setownboard(Board* own);
+Board* getownboard();
 void setenemyboard(Board* enemy);
+Board* getenemyboard();
 bool ishandfull();
 bool ishandempty();
 bool ismonsterzoneempty();

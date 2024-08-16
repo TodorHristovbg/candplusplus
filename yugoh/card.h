@@ -31,6 +31,7 @@ public:
     void setowner(Player* owner);
     Player* getowner() const;
 
+
     virtual void Play();
     virtual void Display();
   

@@ -18,6 +18,9 @@ Monster* getmonsterat(int index);
 bool hasbackrow(int index);
 Spell* getspellat(int index);
 void triggerspell(int index);
+void displaymonsterzone();
+void displaybackrow();
+void displayboard();
 ~Board();
 
 };

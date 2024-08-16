@@ -44,9 +44,15 @@ int Player::getlifepoints(){
 void Player::setownboard(Board* own){
          ownboard=own;
     }
+Board* Player::getownboard(){
+    return ownboard;
+}
 void Player::setenemyboard(Board* enemy){
         enemyboard=enemy;
     }
+Board* Player::getenemyboard(){
+    return enemyboard;
+}
 
 bool Player::ishandfull(){
         if(hand[5]->getname()=="DEFAULT"){
@@ -148,7 +154,7 @@ bool Player::legalmove(int indexinhand){
 
         if(dynamic_cast<Spell*>(hand[indexinhand])!= nullptr){
             if(spellzonefull()){
-                std::cout<<"Your backrow is full JAJAJAJA NO ITS NOT and you cant play more spells/traps"<<std::endl;
+                std::cout<<"Your backrow is full and you cant play more spells/traps"<<std::endl;
             }
         }
 
@@ -177,37 +183,22 @@ void Player::Play(int indexinhand){
 
 
 void Player::displaymonsterzone(){
-        int i=0;
     std::cout<<"Displaying "<<Name<<"'s monsterzone:"<<std::endl;
-
-    
-
-    while (i<6)
-    {
-            ownboard->monsterzone[i]->Display();
- 
-        i++;
-    }
-    std::cout<<std::endl;
+    ownboard->displaymonsterzone();
+     
     }
 
 void Player::displaybackrow(){
-          int i=0;
-    std::cout<<"Displaying "<<Name<<"'s backrow:"<<std::endl;
-    while (i<6)
-    {
-            ownboard->spellzone[i]->Display();
- 
-        i++;
-    }
-    std::cout<<std::endl;
+      std::cout<<"Displaying "<<Name<<"'s backrow:"<<std::endl;
+      ownboard->displaybackrow();
+
+      
     }
 
 
 void Player::displayboard(){
-    
-    displaymonsterzone();
-    displaybackrow();
+  
+    ownboard->displayboard();
    
    }
 

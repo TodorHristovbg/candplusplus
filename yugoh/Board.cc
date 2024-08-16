@@ -31,6 +31,7 @@ void Board::destroybackrow(int index){
 
 
 bool Board::hasmonsterat(int index){
+    if(index<0 || index>5){return false;}
     if(monsterzone[index]->getname()=="DEFAULT"){
         return false;
     }
@@ -82,6 +83,39 @@ void Board::triggerspell(int index){
 
 
 }
+
+
+void Board::displaymonsterzone(){
+   
+       int i=0;
+    while (i<6)
+    {
+
+        getmonsterat(i)->Display();
+ 
+        i++;
+    }
+    std::cout<<std::endl;
+}
+
+void Board::displaybackrow(){
+     
+    int i=0;
+    while (i<6)
+    {
+    getspellat(i)->Display();
+ 
+        i++;
+    }
+    std::cout<<std::endl;
+}
+
+void Board::displayboard(){
+    displaymonsterzone();
+    displaybackrow();
+}
+
+
 Board::~Board(){
     std::cout<<"BOARD DESTRUCTOR CALLED"<<std::endl;
     for(int i=0;i<6;i++){
@@ -89,3 +123,4 @@ Board::~Board(){
         delete spellzone[i];
     }
 }
+
